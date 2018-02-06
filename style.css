@@ -55,4 +55,25 @@ fraction) of the free space within the grid container .*/
   fraction) of the free space within the grid container .*/
     grid-template-rows: 50vh 50vh; /* Create one row and set the height to be 100vh (full viewport height). */
   }
+  .tweets {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 1;
+  }
+  .replies {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 1;
+  }
+  .search {
+    /* grid-column: 4 / 5 */ /* shorthand */
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2;
+  }
+  .messages {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 2;
+  }
 }
