@@ -24,7 +24,15 @@ body {
 
 .app-layout {
   display: grid; /* Set the display property to grid. */
-  grid-template-columns: 1fr 1fr; /* Divide the container element into four columns, each column is 1fr (one
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Divide the container element into four columns, each column is 1fr (one
 fraction) of the free space within the grid container .*/
-  grid-template-rows: 50vh 50vh; /* Create one row and set the height to be 100vh (full viewport height). */
+  grid-template-rows: 100vh; /* Create one row and set the height to be 100vh (full viewport height). */
+}
+@media screen and (max-width: 1024px) {
+  .app-layout {
+    display: grid; /* Set the display property to grid. */
+    grid-template-columns: 1fr 1fr; /* Divide the container element into four columns, each column is 1fr (one
+  fraction) of the free space within the grid container .*/
+    grid-template-rows: 50vh 50vh; /* Create one row and set the height to be 100vh (full viewport height). */
+  }
 }
