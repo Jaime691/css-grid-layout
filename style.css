@@ -21,32 +21,24 @@ body {
 .messages {
   background-color: #59abe3;
 }
-.tweets {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row: 1;
+.search {
+  grid-area: search;
 }
 .replies {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row: 1;
-}
-.search {
-  /* grid-column: 4 / 5 */ /* shorthand */
-  grid-column-start: 4;
-  grid-column-end: 5;
-  grid-row: 1;
+  grid-area: replies;
 }
 .messages {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row: 1;
+  grid-area: messages;
+}
+.tweets {
+  grid-area: tweets;
 }
 .app-layout {
   display: grid; /* Set the display property to grid. */
   grid-template-columns: 1fr 1fr 1fr 1fr; /* Divide the container element into four columns, each column is 1fr (one
 fraction) of the free space within the grid container .*/
   grid-template-rows: 100vh; /* Create one row and set the height to be 100vh (full viewport height). */
+  grid-template-areas: 'search replies messages tweets';
 }
 @media screen and (max-width: 1024px) {
   .app-layout {
@@ -54,26 +46,20 @@ fraction) of the free space within the grid container .*/
     grid-template-columns: 1fr 1fr; /* Divide the container element into four columns, each column is 1fr (one
   fraction) of the free space within the grid container .*/
     grid-template-rows: 50vh 50vh; /* Create one row and set the height to be 100vh (full viewport height). */
-  }
-  .tweets {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row: 1;
-  }
-  .replies {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row: 1;
+    grid-template-areas:
+      'left-top right-top'
+      'left-bottom right-bottom';
   }
   .search {
-    /* grid-column: 4 / 5 */ /* shorthand */
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row: 2;
+    grid-area: left-top;
+  }
+  .replies {
+    grid-area: right-top;
   }
   .messages {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row: 2;
+    grid-area: left-bottom;
+  }
+  .tweets {
+    grid-area: right-bottom;
   }
 }
